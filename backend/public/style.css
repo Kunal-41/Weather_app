@@ -1,0 +1,126 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #83a4d4, #b6fbff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* Main Container */
+.container {
+  max-width: 400px;
+  width: 90%;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+/* Input */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* Suggestions Dropdown */
+#suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+#suggestions li {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#suggestions li.active-suggestion {
+  background: #e3f2fd;
+  color: #007bff;
+  font-weight: bold;
+  border-left: 4px solid #007bff;
+}
+
+#suggestions li:hover {
+  background: #f0f4f8;
+}
+
+/* Weather Data Box */
+#weather-data {
+  margin-top: 18px;
+  padding: 14px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  min-height: 40px;
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.4;
+  border: 1px solid #eee;
+}
