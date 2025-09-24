@@ -25,44 +25,65 @@ weather_app/
 ---
 
 ## 🛠️ Technologies Used
+# 🌦️ Weather App
 
-- HTML
-- CSS
-- JavaScript (Fetch API)
-- OpenWeatherMap API
+This repository hosts a simple Weather App where an Express backend serves a small frontend from `backend/public` and proxies requests to the OpenWeatherMap API.
 
----
+Summary of what's in this repo
+- `backend/` — Express server and Node project
+   - `server.js` — serves static files and exposes `/weather` endpoint
+   - `package.json` — Node dependencies (`express`, `node-fetch`, `dotenv`)
+   - `.env` — (not committed) place your `OPENWEATHER_API_KEY` here
+- `backend/public/` — frontend assets served by Express
+   - `index.html`, `script.js`, `style.css`, `cities.json`
 
-## 🖥️ How to Run Locally
+Prerequisites
+- Node.js (v14+)
 
-1. Clone this repository or download the ZIP
-2. Open the folder in your code editor
-3. Replace the API key in `script.js`:
-   ```js
-   const apiKey = "YOUR_API_KEY_HERE";
-   ```
-4. Open `index.html` in a browser
+Run locally (PowerShell)
+1. Open a terminal and change to the backend folder:
 
----
+```powershell
+cd backend
+```
 
-## 📸 Screenshots
+2. Install dependencies (if not already installed):
 
-![Screenshot 2025-07-03 232939](https://github.com/user-attachments/assets/c8b23434-1465-47ee-b15f-bf5505e52caa)
+```powershell
+npm install
+```
 
----
+3. Create a `.env` file inside `backend/` with this content:
 
-## 🔐 Note
+```text
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+PORT=3000
+```
 
-Make sure to **use your own OpenWeatherMap API key**. You can get one for free by signing up at [https://openweathermap.org/api](https://openweathermap.org/api).
+4. Start the server:
 
----
+```powershell
+node server.js
+```
 
-## 👨‍💻 Author
+5. Open your browser to `http://localhost:3000`
 
-**Kunal Pantawne**  
-🌐 GitHub: [Kunal-41](https://github.com/Kunal-41)
+Notes
+- Use the backend URL (`http://localhost:3000`) to access the frontend so API calls go through the server and avoid CORS issues.
+- `backend/public/cities.json` contains the list of cities used for autocomplete.
+- If you have an existing `frontend/` folder, it is not used; the active frontend is `backend/public`.
 
----
+Development
+- Edit frontend files in `backend/public` and refresh the browser.
+- If you change `server.js`, restart the Node process.
+
+Optional improvements
+- Add an `npm start` script in `backend/package.json` for convenience.
+
+Author
+- **Kunal Pantawne** — GitHub: https://github.com/Kunal-41
+
+```
 
 
 
